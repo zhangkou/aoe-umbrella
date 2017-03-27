@@ -15,5 +15,9 @@ public interface UserMapper {
 	
 	@Select("select * from user where phone_number = #{phoneNumber}")
 	Map<String, Object> getUserByPhoneNumber(@Param("phoneNumber") String phoneNumber);
-
+	
+	@Select("select * from user where third_type = #{type} and third_id = #{id}")
+	Map<String, Object> getUserByThird(@Param("type") String type, @Param("id") String id);
+	
+	void updateUser(Map<String, Object> user);
 }

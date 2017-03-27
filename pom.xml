@@ -67,7 +67,24 @@
 		    <groupId>commons-codec</groupId>
 		    <artifactId>commons-codec</artifactId>
 		</dependency>
-		
+		<!-- barcode encoding/decoding library -->
+		<dependency>
+	        <groupId>com.google.zxing</groupId>
+	        <artifactId>core</artifactId>
+	        <version>3.2.1</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>com.google.zxing</groupId>
+	        <artifactId>javase</artifactId>
+	        <version>3.2.1</version>
+   		</dependency>
+   		<!-- token -->
+   		<dependency>
+		    <groupId>com.auth0</groupId>
+		    <artifactId>java-jwt</artifactId>
+		    <version>2.1.0</version>
+		</dependency>
+   		
     </dependencies>
 
     <properties>

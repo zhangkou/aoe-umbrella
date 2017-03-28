@@ -42,6 +42,7 @@ public class WXController {
 		
 		Map<String, Object> result =  WXUtils.jscode2session(js_code) ;
 		if(result != null && !result.isEmpty()){
+			map.putAll(result);
 			String errcode = String.valueOf(result.get("errcode")) ;
 			if(StringUtils.isNotBlank(errcode) && !StringUtils.equalsIgnoreCase("null", errcode)){
 				RestMessage restMessage=new RestMessage(Constants.WX_JSCODE_INVALID, Constants.REST_TYPE_E, (String)result.get("errmsg"));

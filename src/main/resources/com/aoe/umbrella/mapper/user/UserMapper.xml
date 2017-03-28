@@ -24,6 +24,7 @@
 		UPDATE user SET 
 			status=#{status}, 
 			phone_number=#{phone_number},
+			password=#{password},
 			third_type=#{third_type}, 
 			third_id=#{third_id}, 
 			token=#{token}, 
@@ -31,14 +32,15 @@
 		WHERE id = #{id}
 	</update>
 	<insert id="createUser" parameterType="map" useGeneratedKeys="true" keyProperty="id">
-		INSERT INTO user(status, phone_number, third_type, third_id, token, register_date)
-		values(
-			status=#{status}, 
-			phone_number=#{phone_number},
-			third_type=#{third_type}, 
-			third_id=#{third_id}, 
-			token=#{token}, 
-			register_date=#{register_date}
+		INSERT INTO user(status, phone_number, password, third_type, third_id, token, register_date)
+		values (
+			#{status}, 
+			#{phone_number},
+			#{password},
+			#{third_type}, 
+			#{third_id}, 
+			#{token},
+			#{register_date}
 		)	
 	</insert>
 </mapper>

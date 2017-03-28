@@ -18,4 +18,10 @@ public final class Constants {
 	public final static String WX_JSCODE_INVALID	="wx.jscode.invalid";
 	public final static String WX_JSCODE_OK			="wx.jscode.ok";
 	public final static String WX_USER_NULL			="wx.user.null";
+	
+
+	public final static String POST_CONTENT_NULL			="post.content.empty";
+	
+	public final static String USER_REGISTER_OK	 			="user.register.ok";
+
 }

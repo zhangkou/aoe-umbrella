@@ -8,8 +8,8 @@ public class WXUtils {
 	private static final String jscode2session_url 				= "https://api.weixin.qq.com/sns/jscode2session?" ;
 	private static final String accessToken_url 				= "https://api.weixin.qq.com/cgi-bin/token?" ;
 	private static final String template_send					= "https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?" ;
-	private static final String appid							= "wxd8a61295b5994acf" ;
-	private static final String secret 							= "3b81b79ae2fbeded4b150c6ac8a9db6a" ;
+	private static final String appid							= "wx45af4760ff335945" ;
+	private static final String secret 							= "14242e14cde20a0b2c3fb1621b85da79" ;
 	private static final String grant_type 						= "authorization_code" ;
 	private static final String accessToken_grant_type			= "client_credential" ;
 	private static final String template_id						= "_Ez9IeIX3bmnGvom5mAYYOslUOQaZxXfKfMRYJFPmHI" ;

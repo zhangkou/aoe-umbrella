@@ -47,23 +47,21 @@ public class WXController {
 				RestMessage restMessage=new RestMessage(Constants.WX_JSCODE_INVALID, Constants.REST_TYPE_E, (String)result.get("errmsg"));
 				map.put(Constants.REST_MESSAGE_KEY, restMessage);
 			}else{
-				
 				String openId = (String)result.get("openid") ;
 				if(StringUtils.isNotEmpty(openId)){
 					Map<String, Object> user = this.userService.getUserByThird("wx_mini", openId) ;	
 					if(user != null){
 						String token = TokenUtils.createToken(user);
 						result.put("token",token);
-						results.add(result) ;
 						
 						RestMessage restMessage=new RestMessage(Constants.WX_JSCODE_OK, Constants.REST_TYPE_S, "successfull");
-						map.put(Constants.REST_MESSAGE_KEY, restMessage);
-						
-						map.put(Constants.REST_DATA_KEY, new Page(results));
+						map.put(Constants.REST_MESSAGE_KEY, restMessage);	
 					}else{
 						RestMessage restMessage=new RestMessage(Constants.WX_USER_NULL, Constants.REST_TYPE_E, "can not find user");
 						map.put(Constants.REST_MESSAGE_KEY, restMessage);
 					}
+					results.add(result) ;
+					map.put(Constants.REST_DATA_KEY, new Page(results));
 				}
 				
 			}

@@ -34,4 +34,11 @@ public class UserService {
 		return this.userMapper.getUserByThird(type, id) ;
 	}
 	
+	@Transactional(readOnly = false)
+	public void createUser(Map<String, Object> user){
+		if(user == null || user.isEmpty()){
+			return  ;
+		}
+		this.userMapper.createUser(user);
+	}
 }

@@ -20,4 +20,6 @@ public interface UserMapper {
 	Map<String, Object> getUserByThird(@Param("type") String type, @Param("id") String id);
 	
 	void updateUser(Map<String, Object> user);
+	
+	void createUser(Map<String, Object> user);
 }

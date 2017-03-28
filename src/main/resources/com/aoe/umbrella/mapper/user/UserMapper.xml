@@ -22,14 +22,23 @@
 <mapper namespace="com.aoe.umbrella.mapper.user.UserMapper">
     <update id="updateUser" parameterType="map" flushCache="true" statementType="PREPARED" timeout="20">
 		UPDATE user SET 
-		status=#{status}, 
-		phone_number=#{phone_number}, 
-		validation_date=#{validation_date}, 
-		validation_code=#{validation_code}, 
-		third_type=#{third_type}, 
-		third_id=#{third_id}, 
-		token=#{token}, 
-		register_date=#{register_date}
-		WHERE id =#{id}	  
+			status=#{status}, 
+			phone_number=#{phone_number},
+			third_type=#{third_type}, 
+			third_id=#{third_id}, 
+			token=#{token}, 
+			register_date=#{register_date}
+		WHERE id = #{id}
 	</update>
+	<insert id="createUser" parameterType="map" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO user(status, phone_number, third_type, third_id, token, register_date)
+		values(
+			status=#{status}, 
+			phone_number=#{phone_number},
+			third_type=#{third_type}, 
+			third_id=#{third_id}, 
+			token=#{token}, 
+			register_date=#{register_date}
+		)	
+	</insert>
 </mapper>

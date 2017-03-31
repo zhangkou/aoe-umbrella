@@ -15,5 +15,21 @@ public interface LockerMapper {
 	
 	@Select("select * from locker where id = #{id}")
 	Map<String, Object> getLockerById(@Param("id") String id);
-
+	
+	@Select("select * from locker where "
+			+ "sqrt("
+					+ "("
+						+ "((#{longitude}-longitude)*PI()*12656*cos(((#{latitude}+latitude)/2)*PI()/180)/180) "
+						+ "*"
+						+ "((#{longitude}-longitude)*PI()*12656*cos (((#{latitude}+latitude)/2)*PI()/180)/180) "
+					+ ")"
+					+ "+"
+					+ "("
+						+ "((#{latitude}-latitude)*PI()*12656/180) "
+						+ "*"
+						+ "((#{latitude}-latitude)*PI()*12656/180) "
+					+ ")"
+			+ ")<#{scope}")
+	List<Map<String, Object>> getLockersByLongAndLatitude(@Param("longitude") double longitude, @Param("latitude") double latitude,@Param("scope") int scope);
+	
 }

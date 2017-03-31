@@ -16,15 +16,9 @@
        limitations under the License.
 
 -->
-<!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration>
-    <typeAliases>
-        
-    </typeAliases>
-    <mappers>
-        <mapper resource="com/aoe/umbrella/mapper/user/UserMapper.xml"/>
-        <mapper resource="com/aoe/umbrella/mapper/locker/LockerMapper.xml"/>
-    </mappers>
-</configuration>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aoe.umbrella.mapper.locker.LockerMapper">
+	
+</mapper>

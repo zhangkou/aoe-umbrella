@@ -26,6 +26,15 @@ public class UserService {
 		return this.userMapper.getUserByPhoneNumber(phoneNumber) ;
 	}
 	
+	public boolean checkUserExistByPhoneNum(String phoneNumber){
+		boolean userExist = false ;
+		Map<String, Object> user = this.userMapper.getUserByPhoneNumber(phoneNumber) ;
+		if(user != null && !user.isEmpty()){
+			userExist = true ;
+		}
+		return userExist ;
+	}
+	
 	
 	public Map<String, Object> getUserByThird(String type, String id){
 		if(StringUtils.isEmpty(type) || StringUtils.isEmpty(id)){

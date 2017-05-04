@@ -39,8 +39,14 @@ public class UserController {
 		String phoneNumber 		= (String)postContent.get("phoneNumber") ;
 		String password			= (String)postContent.get("password") ;
 		String validationCode 	= (String)postContent.get("validationCode") ;
-		if(	StringUtils.isEmpty(openId) || StringUtils.isEmpty(phoneNumber) || StringUtils.isEmpty(validationCode)){
+		if(	StringUtils.isEmpty(openId) || StringUtils.isEmpty(phoneNumber) || StringUtils.isEmpty(validationCode) || StringUtils.isEmpty(password)){
 			RestMessage restMessage=new RestMessage(Constants.POST_CONTENT_NULL, Constants.REST_TYPE_E, Constants.POST_CONTENT_NULL);
+			map.put(Constants.REST_MESSAGE_KEY, restMessage);
+			return map ;
+		}
+		
+		if(this.userService.checkUserExistByPhoneNum(phoneNumber)){
+			RestMessage restMessage=new RestMessage(Constants.USER_REGISTER_EXIST, Constants.REST_TYPE_E, Constants.USER_REGISTER_EXIST);
 			map.put(Constants.REST_MESSAGE_KEY, restMessage);
 			return map ;
 		}

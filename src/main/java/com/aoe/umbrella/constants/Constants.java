@@ -23,5 +23,7 @@ public final class Constants {
 	public final static String POST_CONTENT_NULL			="post.content.empty";
 	
 	public final static String USER_REGISTER_OK	 			="user.register.ok";
+	
+	public final static String USER_REGISTER_EXIST			= "user.register.exist" ;
 
 }

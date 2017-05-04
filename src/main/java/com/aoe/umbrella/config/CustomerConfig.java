@@ -18,7 +18,7 @@ public class CustomerConfig {
         return new ServerEndpointExporter();
     }
     
-    @Bean
+   /* @Bean
     public EmbeddedServletContainerFactory servletContainer() {
         TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory() {
             @Override
@@ -42,5 +42,5 @@ public class CustomerConfig {
         connector.setPort(80);
         connector.setRedirectPort(443);
         return connector;
-    }
+    }*/
 }

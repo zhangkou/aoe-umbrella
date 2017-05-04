@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 import com.aoe.umbrella.utils.JsonMapper;
 
 @Component
-@ServerEndpoint(value = "/ws/WxWebsocketServer/{openId}")
+@ServerEndpoint(value = "/ws/WebsocketServer/{openId}")
 public class WebsocketServer {	
 	protected static Map<String, Session> clients = Collections.synchronizedMap(new HashMap<String, Session>()) ;
 	protected static Map<String, List<Object>> mq = Collections.synchronizedMap(new HashMap<String, List<Object>>()) ;
